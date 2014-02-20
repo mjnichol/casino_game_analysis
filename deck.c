@@ -15,8 +15,6 @@ void init_deck(struct card *deck){
 				
 				card.c_suit = k;
 				card.c_rank = j;
-				if( j > 9 )
-					printf("what the fuck!\n");
 
 				if ( j == 0 )
 					card.value = 11; 
@@ -33,7 +31,7 @@ void init_deck(struct card *deck){
 
 }
 
-/* make sure to seed the randomw number generator */
+/* shuffle the deck of cards */
 void shuffle(struct card *deck){
 	
 	struct card temp;
@@ -49,6 +47,7 @@ void shuffle(struct card *deck){
 
 }
 
+/* print the card you are passed */
 void print_card(struct card pc){
 
 	char *suit;

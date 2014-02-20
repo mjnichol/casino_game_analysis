@@ -2,7 +2,7 @@
 #define DECK_H
 
 #define DECKS 4
-#define CARDS 13 /* was 13 */
+#define CARDS 13
 #define SUITS 4
 
 /* card suit definition */

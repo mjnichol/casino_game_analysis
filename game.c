@@ -1,6 +1,7 @@
 #include "game.h"
 #include "deck.h"
 
+/* result of the match card bet */
 int match_card(struct state *game){
 	
 	struct card card_1 = game->before_card;
@@ -32,6 +33,7 @@ int match_card(struct state *game){
 
 }
 
+/* result of the match dice bet */
 int match_dice(struct state *game){
 
 	int d_1 = game->die_1;
