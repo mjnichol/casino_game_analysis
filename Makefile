@@ -9,4 +9,4 @@ deck.o: deck.c
 	gcc -c deck.c
 
 clean:
-	rm -rf *.o cat_eric.exe
+	rm -rf *.o casino_game.exe

@@ -16,6 +16,16 @@ struct stats{
 	int num_trials;
 };
 
+/* zero the statistics */
+void init_stats(struct stats *gs){
+
+	gs->mean = 0.0;
+	gs->stddev = 0.0;
+	gs->num_wins = 0;
+	gs->num_trials = 0;
+}
+
+/* incrementally update the statistics */
 void inc_update_stats(struct stats *gs, int game_outcome, int trial){
 	
 	double prev_mean = gs->mean;
@@ -87,38 +97,23 @@ int main(int argc, char *argv[]){
 	
 	/* initialize the deck */
 	init_deck(deck);
-	/*
+	
+	/* shuffle the cards */
+	shuffle(deck);
+
 	for(i=0; i < DECKS*CARDS*SUITS;i++){
 		print_card(deck[i]);
 	}
 
-	*/
-	/* shuffle the cards */
-	shuffle(deck);
+	/* initialize the statistics structs */
+	init_stats(&b_before);
+	init_stats(&b_after);
+	init_stats(&b_both);
+	init_stats(&m_card);
+	init_stats(&m_dice);
+	init_stats(&game_stats);
 
-
-	/* init the standard deviations */
-	b_before.stddev = 0;
-	b_after.stddev = 0;
-	b_both.stddev = 0;
-	m_card.stddev = 0;
-	m_dice.stddev = 0;
-	game_stats.stddev = 0;
-
-	b_before.num_wins = 0;
-	b_after.num_wins = 0;
-	b_both.num_wins = 0;
-	m_card.num_wins = 0;
-	m_dice.num_wins = 0;
-	game_stats.num_wins = 0;
-
-	b_before.num_trials = 0;
-	b_after.num_trials = 0;
-	b_both.num_trials = 0;
-	m_card.num_trials = 0;
-	m_dice.num_trials = 0;
-	game_stats.num_trials = 0;
-
+	/* run the simulations */
 	for (i = 0 ; i < trials ; i++){
 		
 		/* initialize the game */
