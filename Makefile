@@ -1,5 +1,5 @@
 all: main.o game.o deck.o
-	gcc main.o game.o deck.o -o cat_eric.exe -lm	
+	gcc main.o game.o deck.o -o casino_game.exe -lm	
 
 main.o: main.c
 	gcc -c main.c
