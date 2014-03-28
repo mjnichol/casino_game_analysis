@@ -1,0 +1,4 @@
+main game: additional payout when double sixes rolled 
+match card: house edge to 3%
+
+get both to have 3% house edge
