@@ -11,18 +11,18 @@ int match_card(struct state *game){
 	if ( (card_1.c_rank == card_2.c_rank) && 
 	    (card_1.c_suit == card_2.c_suit) &&
 	    (card_1.c_rank == ACE) )
-		return 100;
+		return 80;
 	/* Match Rank and Rank = Ace */
 	else if ( (card_1.c_rank == card_2.c_rank) &&
 		    (card_1.c_rank == ACE))
-		return 30;
+		return 20;
 	/* Match Rank and Suit */
 	else if ( (card_1.c_rank == card_2.c_rank) &&
 		    (card_1.c_suit == card_2.c_suit))
-		return 10;
+		return 6;
 	/* Match Rank */
 	else if ( ( card_1.c_rank == card_2.c_rank ) )
-		return 5;
+		return 2;
 	/* Match Suit */
 	else if ( (card_1.c_suit == card_2.c_suit ))
 		return 1;
@@ -41,7 +41,7 @@ int match_dice(struct state *game){
 
 	/* dice match and are sixes*/
 	if ( (d_1 == d_2) && (d_1 == 6) )
-		return 15;
+		return 11;
 	/* dice match */
 	else if ( d_1 == d_2) 
 		return 3;

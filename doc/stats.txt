@@ -1,0 +1,29 @@
+Beat Before:
+The mean is: -0.098309
+The std dev is: 0.946722
+Percent of wins: 0.403819
+
+Beat After:
+The mean is: -0.098146
+The std dev is: 0.946756
+Percent of wins: 0.403917
+
+Beat Both:
+The mean is: -0.145606
+The std dev is: 1.639386
+Percent of wins: 0.213599
+
+Match Card:
+The mean is: -0.098448
+The std dev is: 3.243535
+Percent of wins: 0.304303
+
+Match Dice:
+The mean is: -0.111424
+The std dev is: 2.330641
+Percent of wins: 0.166578
+
+Game Statistics:
+The mean is: -0.110607
+The std dev is: 4.520431
+Percent of wins: 0.298443

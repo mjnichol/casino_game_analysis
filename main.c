@@ -101,10 +101,6 @@ int main(int argc, char *argv[]){
 	/* shuffle the cards */
 	shuffle(deck);
 
-	for(i=0; i < DECKS*CARDS*SUITS;i++){
-		print_card(deck[i]);
-	}
-
 	/* initialize the statistics structs */
 	init_stats(&b_before);
 	init_stats(&b_after);
