@@ -1,3 +1,5 @@
+Statistics over 100 million trials.
+
 Beat Before:
 The mean is: -0.098309
 The std dev is: 0.946722
