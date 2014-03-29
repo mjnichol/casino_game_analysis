@@ -13,8 +13,8 @@ struct stats{
 	double mean;
 	double stddev;
 	int num_wins;
+
 	int num_trials;
-	int num_ties;
 };
 
 /* zero the statistics */
@@ -24,11 +24,10 @@ void init_stats(struct stats *gs){
 	gs->stddev = 0.0;
 	gs->num_wins = 0;
 	gs->num_trials = 0;
-	gs->num_ties = 0;
 }
 
 /* incrementally update the statistics */
-void inc_update_stats(struct stats *gs, float game_outcome, int trial){
+void inc_update_stats(struct stats *gs, int game_outcome, int trial){
 	
 	double prev_mean = gs->mean;
 	gs->mean+= (game_outcome - gs->mean)/trial;
@@ -37,14 +36,11 @@ void inc_update_stats(struct stats *gs, float game_outcome, int trial){
 
 	if(game_outcome > 0)
 		gs->num_wins++;
-	else if(game_outcome == 0)
-		gs->num_ties++;
 }
 
 void print_stats(struct stats *gs){
-	printf("The mean is: %f\nThe std dev is: %f\nPercent of wins: %f\nPercent of ties: %f\n\n", 
-	    gs->mean, gs->stddev, (double)gs->num_wins/(double)gs->num_trials, 
-		(double)gs->num_ties/(double)gs->num_trials);
+	printf("The mean is: %f\nThe std dev is: %f\nPercent of wins: %f\n\n", 
+	    gs->mean, gs->stddev, (double)gs->num_wins/(double)gs->num_trials);
 }
 
 static void usage(){
@@ -72,7 +68,7 @@ int main(int argc, char *argv[]){
 
 	int i;
 	int card_index = 0;
-	float outcome; 
+	int outcome; 
 	int die_total;
 
 	gp = &game;
@@ -127,42 +123,32 @@ int main(int argc, char *argv[]){
 		card_index+=2;		
 
 		/* beat before */
-		if (die_total == 12)
-			outcome = 4.0; 
-		else if ( die_total > game.before_card.value )
-			outcome = 1.0;
+		if ( die_total > game.before_card.value )
+			outcome = 1;
 		else if ( die_total < game.before_card.value )
-			outcome = -1.0;
+			outcome = -1;
 		else
-			outcome = 0.0;							
+			outcome = 0;							
 		inc_update_stats(&b_before, outcome, i+1);
  		inc_update_stats(&game_stats, outcome, i+1);
 		
 		/* beat after */
-		if (die_total == 12)
-			outcome = 4.0; 
-		else if ( die_total > game.after_card.value )
-			outcome = 1.0;
+		if ( die_total > game.after_card.value )
+			outcome = 1;
 		else if ( die_total < game.after_card.value )
-			outcome = -1.0;
+			outcome = -1;
 		else
-			outcome = 0.0;
+			outcome = 0;
 
 		inc_update_stats(&b_after, outcome, i+1);
 		inc_update_stats(&game_stats, outcome, i+1);
 		
 		/* beat both */
-		if (die_total == 12)
-			outcome = 6.0;
-
-		else if ( (die_total > game.after_card.value) &&
+		if ( (die_total > game.after_card.value) &&
 		    (die_total > game.before_card.value) )
-			outcome = 3.0;
-		else if ( (die_total == game.after_card.value) &&
-			(die_total == game.before_card.value))
-			outcome = 0.0;	
+			outcome = 3;
 		else
-			outcome = -1.0;
+			outcome = -1;
 
 		inc_update_stats(&b_both, outcome, i+1);
 		inc_update_stats(&game_stats, outcome, i+1);

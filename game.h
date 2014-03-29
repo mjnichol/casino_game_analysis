@@ -23,10 +23,10 @@ int beat_after(struct state *game);
 int beat_both(struct state *game);
 
 /* Match Card Payout */
-int match_card(struct state *game);
+float match_card(struct state *game);
 
 /* Match Dice Payout */
-int match_dice(struct state *game);
+float match_dice(struct state *game);
 
 
 #endif
