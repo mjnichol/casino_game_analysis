@@ -1,31 +1,36 @@
 Statistics over 100 million trials.
-
 Beat Before:
-The mean is: -0.098309
-The std dev is: 0.946722
-Percent of wins: 0.403819
+The mean is: -0.014947
+The std dev is: 1.150070
+Percent of wins: 0.403840
+Percent of ties: 0.093997
 
 Beat After:
-The mean is: -0.098146
-The std dev is: 0.946756
-Percent of wins: 0.403917
+The mean is: -0.014864
+The std dev is: 1.150066
+Percent of wins: 0.403875
+Percent of ties: 0.094010
 
 Beat Both:
-The mean is: -0.145606
-The std dev is: 1.639386
-Percent of wins: 0.213599
+The mean is: -0.049318
+The std dev is: 1.855891
+Percent of wins: 0.213640
+Percent of ties: 0.012745
 
 Match Card:
-The mean is: -0.098448
-The std dev is: 3.243535
-Percent of wins: 0.304303
+The mean is: -0.022620
+The std dev is: 3.846531
+Percent of wins: 0.304336
+Percent of ties: 0.000000
 
 Match Dice:
-The mean is: -0.111424
-The std dev is: 2.330641
-Percent of wins: 0.166578
+The mean is: -0.138777
+The std dev is: 2.200722
+Percent of wins: 0.166670
+Percent of ties: 0.000000
 
 Game Statistics:
-The mean is: -0.110607
-The std dev is: 4.520431
-Percent of wins: 0.298443
+The mean is: -0.048282
+The std dev is: 5.073430
+Percent of wins: 0.298472
+Percent of ties: 0.040150
